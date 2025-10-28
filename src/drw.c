@@ -638,7 +638,6 @@ void redraw_hist(void) {
 	WINDOW* const win = data->win_hist;
 	PANEL* const pan = data->pan_hist;
 	const int wh_height = 25;
-	/* currently needs to be constant (see c.c:1201) */
 	const int wh_width = HIST_WIN_WIDTH;
 	const int wh_y = align_center(LINES, wh_height);
 	const int wh_x = align_center(COLS, wh_width);
