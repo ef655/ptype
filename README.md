@@ -9,10 +9,19 @@ For a comprehensive document on the features and how to configure ptype, see `pt
 
 ---
 
-<img src="/media/ptype_quote.png" alt="ptype quote" width="60%"/>
-<img src="/media/ptype_timed.png" alt="ptype timed" width="60%"/>
-<img src="/media/ptype_colors.png" alt="ptype colors" width="60%"/>
-<p float="left">
+<p align="middle">
+  <img src="/media/ptype_quote.png" alt="ptype quote" width="60%"/>
+</p>
+
+<p align="middle">
+  <img src="/media/ptype_timed.png" alt="ptype timed" width="60%"/>
+</p>
+
+<p align="middle">
+  <img src="/media/ptype_colors.png" alt="ptype colors" width="60%"/>
+</p>
+
+<p align="middle">
   <img src="/media/ptype_history.png" alt="ptype history" width="40%"/>
   <img src="/media/ptype_options.png" alt="ptype options" width="40%"/>
 </p>
