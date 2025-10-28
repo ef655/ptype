@@ -23,7 +23,7 @@ For a comprehensive document on the features and how to configure ptype, see `pt
 
 <p align="middle">
   <img src="/media/ptype_history.png" alt="ptype history" width="40%"/>
-  <img src="/media/ptype_options.png" alt="ptype options" width="40%"/>
+  <img src="/media/ptype_options.png" alt="ptype options" width="45%" align="top"/>
 </p>
 
 ## Installation
