@@ -1392,10 +1392,10 @@ void loop_hist_stat(void) {
 			fix_bkgd();
 			redraw_hist();
 			continue;
-		case 'j':
+		case KEY_DOWN: case 'j':
 			data->first_line = min(data->nlines-1, data->first_line+1);
 			break;
-		case 'k':
+		case KEY_UP: case 'k':
 			data->first_line = max(0, data->first_line-1);
 			break;
 		case 'g':
