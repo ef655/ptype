@@ -7,6 +7,14 @@ the user accelerate their typing speed (or simply to exert their energy on).
 
 For a comprehensive document on the features and how to configure ptype, see `ptype(6)` after installation.
 
+---
+
+![ptype quote mode](/media/ptype_quote.png "ptype quote mode")
+![ptype timed mode](/media/ptype_timed.png "ptype timed mode")
+![ptype colors](/media/ptype_colors.png "ptype colors")
+![ptype history screen](/media/ptype_history.png "ptype history screen")
+![ptype options screen](/media/ptype_options.png "ptype options screen")
+
 ## Installation
 
 ### Dependencies
