@@ -1,0 +1,11 @@
+27-Oct-2025
+Allow executable dictionaries/quotes-files to be treated different from ordinary
+ones. A specification must be defined for how these scripts treat input (for
+configuration variables) and output their generated text.
+
+21-Oct-2025
+The distribution quotes-file is low quality since there is too few quotes and
+the current quotes are too short.
+
+21-Oct-2025
+Support arbitrary word lengths in tests.

@@ -1,0 +1,420 @@
+.TH @PACKAGE_NAME@ 6 "2025-09-26" "@PACKAGE_NAME@ @PACKAGE_VERSION@"
+.
+.
+.SH NAME
+@PACKAGE_NAME@ \[em] a customizable ncurses based typing practice program.
+.SH SYNOPSIS
+.B @PACKAGE_NAME@
+[\fB\-1Qw\fR] [\fB\-c\fR={on|off}]
+.P
+.B @PACKAGE_NAME@ -v
+.P
+.B @PACKAGE_NAME@ -h
+.
+.
+.SH DESCRIPTION
+.SS Overview
+@PACKAGE_NAME@ is a minimal typing practice program that runs in the terminal.
+@PACKAGE_NAME@ aims to be greatly informative in statistical feedback and highly configurable, providing customization of the UI, the generation of text,
+and the rules of the typing-test.
+@PACKAGE_NAME@ is versatile, running adequately even on old terminals that don't support colors,
+although this may necessitate tweaking the non-color attributes in the configuration (See \[sc]Configuration-file).
+.P
+There is 3 main modes: "Normal," "Timed" & "Quote;"
+both Normal mode and Timed mode generate words from a selected dictionary whereas Quote mode generates text
+verbatim from a quote in a selected quotes-file.
+There should be at least 1 standard dictionary and quotes-file distributed with @PACKAGE_NAME@, but it's also possible for the user to create/add more
+(See \[sc]Dictionary, \[sc]Quotes-file & \[sc]FILES).
+Apart from the main modes, post-processing such as punctuating generated text from a dictionary, or submodes including "Instant-death" can be set.
+.P
+Upon completion of a typing-test, statistics on the user's performance in said test is displayed to the user and \[em] if the history limit is positive \[em]
+is saved in a history-file. The stats consist partially of the user's words-per-minute, accuracy, the elapsed time, characters typed/correct & average-word-length of the text.
+the history-file also records the generated text and the exact text the user typed.
+.P
+@PACKAGE_NAME@ consists of various screens each with their own keybindings which \[em] although we hope are reasonable \[em] are, at least currently, immutable.
+These screens and their respective keybindings are described in the subsequent subsections.
+
+.SS Main-screen
+The main-screen is where the user is prompted with a generated text; traversal to most other screens is done from this screen.
+.P
+The main-screen's keybinds are as follows ('^' denotes ctrl):
+.
+.P
+.TS
+tab(;);
+Lb Lb
+_  _
+Li L
+L  L
+L  L.
+Key;Action
+printable-character;Begin the test.
+^U;Switch to options-screen.
+^P;Switch to history-screen.
+^I;Toggle instant-death mode.
+^M;Iterate to next main mode.
+esc;Exit @PACKAGE_NAME@.
+.TE
+.
+.
+.P
+To prematurely exit an ongoing test, esc may be used.
+.SS Options-screen
+The options-screen displays a list of options that are analogous to the configuration-file (See \[sc]Configuration-file)
+allowing these options to be mutated at runtime.
+affected options will not be retained upon the next execution of @PACKAGE_NAME@.
+.P
+The options-screen's keybinds are as follows:
+.P
+.
+.
+.TS
+tab(;);
+Lb Lb
+_  _
+L  L
+L  L
+L  L
+L  L
+L  L
+L  L.
+Key;Action
+space;Select current option.
+esc;Switch to main-screen.
+down-arrow, j;Move to next option.
+up-arrow, k;Move to previous option.
+g;Move to first option.
+G;Move to last option.
+.TE
+.
+.
+.P
+Escape is used to deselect a currently selected option.
+.SS History-screen
+The history-screen displays a menu of all saved history-files in the history directory denoted as the date in which those files were created.
+The "history_limit" option in the configuration file (See \[sc]Configuration-file) can be changed to increase/decrease the number of files listed.
+.P
+The history-screen keybinds are as follows:
+.
+.
+.P
+.TS
+tab(;);
+Lb Lb
+_  _
+L  L
+L  L
+L  L
+L  L
+L  L
+L  L
+L  L
+L  L
+L  L.
+Key;Action
+space, l;Select current history-file.
+esc, h;Switch to main-screen.
+down-arrow, j;Move to next history-file.
+up-arrow, k;Move to previous history-file.
+^J;Move 5 history-files forward.
+^K;Move 5 history-files backward.
+g;Move to first history-file.
+G;Move to last history-file.
+.TE
+.
+.
+.P
+Upon selecting a history-file a set of statistics analogous to the stat-screen's statistics is displayed;
+moreover, so is the difference between the test's generated text and the user's attempt at typing it.
+.P
+The keybinds for this state are as follows:
+.
+.
+.P
+.TS
+tab(;);
+Lb  Lb
+_   _
+L   L
+L   L
+L   L
+L   L
+L   L.
+Key;Action
+esc, h;Switch back to the history-files screen.
+down-arrow, j;Scroll text down 1 line.
+up-arrow, k;Scroll text up 1 line.
+g;Scroll text to first line.
+G;Scroll text to last line.
+.TE
+.
+.
+.SH OPTIONS
+.BI \-1
+.RS
+One-shot \[em] disables the start-screen and exits after the first test upon exiting the stat-screen.
+.RE
+.P
+.BI \-c={on|off}
+.RS
+Explicitly enables or disables colors being started.
+.RE
+.P
+.BI \-Q
+.RS
+If stdin is not a tty, interpret it as a quotes-file
+(by default a non-tty stdin is read as a dictionary).
+.RE
+.BI \-w
+.RS
+Omit warnings from being printed.
+.RE
+.SS Other options
+.BI \-v
+.RS
+Print the package name and version and exit.
+.RE
+.P
+.BI \-h
+.RS
+Print a helpful message about how @PACKAGE_NAME@ is invoked.
+.RE
+.
+.
+.SH FILE FORMATS
+.SS Configuration directories
+.P
+There is multiple directories where @PACKAGE_NAME@ searches for configuration files;
+the order in which @PACKAGE_NAME@ does this is as follows:
+.P
+.RS
+\[bu]
+.I $XDG_CONFIG_HOME/ptype/
+.RE
+.P
+.RS
+\[bu]
+.I \[ti]/.config/ptype/
+.RE
+.P
+.RS
+\[bu]
+.I @SYSCONFDIR@/ptype/
+.RE
+.P
+The stipulation being that if
+.I $XDG_CONFIG_HOME
+is defined,
+.I \[ti]/.config/ptype/
+is not searched.
+.
+.
+.SS Configuration-file
+The name of the configuration file is "ptype.conf", and is searched for by @PACKAGE_NAME@ in the directories
+in the previous subsection (if multiple exist, the first found is selected).
+.P
+The configuration file consists of a list of newline separated option-value pairs of the format:
+.P
+.RS
+.I option
+=
+.I value
+.RE
+.P
+.I value
+may be a non-empty string or a double-quoted string.
+A double-quoted string may be necessary to denote an empty string or to retain leading & trailing spaces.
+To embed a '"' or a '\\' in a string, it must be preceded by a '\\'.
+.P
+The list of configuration options, their value constraints & their descriptions are as follows:
+.
+.
+.P
+.TS
+tab(;);
+Lb Lb Lb
+_  _  _
+L  L  L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  Li L
+L  L  L
+L  L  L
+L  L  L
+L  L  L
+L  L  L
+L  L  L.
+Option;Value;Description
+mode;Normal|Quote|Timed;Starting mode.
+ideath;boolean;Instant death.
+timer;non-negative-integer;Timed-mode duration (0 = infinite).
+words;positive-integer;Number of words generated for a normal-mode test.
+history_limit;non-negative-integer;Remove the oldest history-files when more files exist than this limit.
+punctuation;0\[en]100;The percent chance of a generated word being punctuated.
+dictionary;file;The dictionary selected at startup from the dictionary directories.
+quotes;file;The quotes-file selected at startup from the quotes-files directories.
+colors;boolean;Whether colors are started.
+text_window_width;positive-integer;Width of the main-screen window (minimum & maximum may vary).
+text_window_height;positive-integer;Height of the main-screen window (minimum & maximum may vary).
+border;boolean;Whether the border is drawn.
+start_screen;boolean;Whether the start-screen is displayed.
+word_filter;POSIX-Extended-regex;Filter words that don't match this expression.
+word_length;range;Generate words of a size exclusively within this range.
+quote_length;range;Generate quotes with a number of words exclusively within this range.
+insert_frequency;0\[en]100;The percent chance of an insertion being made (such as digit-strings).
+digit_strings;range;Interpolate random digit-strings of a size exclusively within this range into text.
+postfix;whitespace-separated-list;List of extra postfix punctuation.
+circumfix;whitespace-separated-list;List of evenly sized strings of extra circumfix punctuation.
+color_border;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Attributes of the window border.
+color_text;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Attributes of text not typed yet.
+color_error;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Attributes of an incorrectly typed character.
+color_typed;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Attributes of a sucessfully typed character.
+color_selected;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Attributes of the currently selected item.
+color_window;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Window attributes.
+color_screen;\fIcolor\fR, \fIcolor\fR [, \fIattribute\fR]...;Screen-background attributes.
+.TE
+.
+.
+.P
+If a value can't be parsed a warning will be emitted on stderr upon exit and a default value is used, otherwise, if a value
+is sucessfully interpreted but it's not a valid value, @PACKAGE_NAME@ will attempt to set it to a
+reasonable value \[em] this can happen when a value falls outside it's permitted range.
+.P
+.I boolean
+may be case-insensitively: On, True, or Yes; or Off, False, or No.
+.P
+.I range
+is a non-negative number followed by a '-' followed by a non-negative number;
+if the range consitutes a single number (such as 5\[en]5), then the '-' and following number can be omitted;
+an empty range is denoted by either a solitary '-' or an empty string.
+.P
+The
+.I color_*
+options' first
+.I color
+is the foreground and the second occurence is the background, and
+is limited to: Black, Red, Green, Yellow, Blue, Magenta, Cyan, White, Default, or None;
+or can also be a string of 6 hexadecimal characters representing an RGB color.
+Default applies the terminal's respective color; and
+None inherits the window's respective color.\[dg] \fIattribute\fR can be a combination of any:
+Bold, Underline, Standout, Dim, Blink, Reverse, Invisible, Italic.
+.P
+Most colors are reused in a multitude of areas not described in the above table.
+.P
+\[dg] For \fIcolor_window\fR, None\[==]Default; and for
+.I color_screen
+the foreground-color and attributes
+are meaningless.
+.
+.
+.SS Dictionary
+Dictionaries are files located in the "dictionary" subdirectory of the aforementioned directories (See \[sc]Configuration directories).
+A combination of all dictionaries found in these directories is available to select at runtime in the options-screen, or in the configuration file.
+If multiple dictionaries of the same name are found, the one loaded is the first found.
+Dictionaries with the special name 'stdin' are ignored and if existing, causes a warning to be emitted on stderr upon exit.
+.P
+Dictionaries simply consist of whitespace seperated words.
+These words must contain only graphical characters, i.e. characters for which isgraph(3) returns true.
+If the '\\' character is to be used it must be preceded by the escape character '\\'.
+.P
+Invalid words \[em] such as those that are too long \[em] are quietly skipped.
+.
+.
+.SS Quotes-file
+Quotes-files are searched and loaded analogously to dictionaries described in the previous subsection except quotes-files are located in
+the "quotes" subdirectory.
+.P
+Quotes-files contain lists of quotes with optional attributes such as an author or source.
+.P
+The format of a single quote is as follows:
+.P
+.RS
+.EX
+author: \fIattr-value\fR
+source: \fIattr-value\fR
+{
+	\fIword\fR [\fIword\fR]...
+}
+.EE
+.RE
+.P
+The author and source attributes are optional and their order is unimportant.
+.I attr-value
+is a string containing only printable characters, i.e. characters where isprint(3) returns true (like isgraph(3) but includes space too).
+.I word
+is almost the same as the the words the dictionary file accepts, with the discrepancy being that if the character '}' is to be used,
+it must also be preceded by the escape character ('\\').
+.P
+If a word found in a quote's text is invalid, for being too long, containing an invalid character, etc.,
+said word is quietly omitted from the text;
+entire quote's containing zero words are also quitely skipped.
+.
+.
+.SH ENVIRONMENT
+.
+.
+.TS
+tab(;);
+L L
+L L
+L L.
+XDG_CONFIG_HOME;Substitutes all occurences of \fI\[ti]/.config/\fR.
+\&;\&
+XDG_STATE_HOME;Substitutes all occurences of \fI\[ti]/.local/state/\fR.
+.TE
+.
+.
+.SH FILES
+.
+.
+.TS
+tab(;);
+Li L
+Li L
+Li L
+Li L
+Li L
+Li L
+Li L
+Li L
+Li L.
+@SYSCONFDIR@/ptype/ptype.conf;System-wide configuration file.
+\&;\&
+@SYSCONFDIR@/ptype/dictionaries/;System-wide dictionary directory.
+\&;\&
+@SYSCONFDIR@/ptype/quotes/;System-wide quotes-file directory.
+\&;\&
+\[ti]/.config/ptype/;Local configuration directory (mirrors the layout of the system-wide directory).
+\&;\&
+\[ti]/.local/state/history/;Local history-file directory generated and written to by @PACKAGE_NAME@ at runtime.
+.TE
+.
+.
+.SH BUGS
+.UR https://github.com/ef655/ptype/issues
+.UE
+.P
+.UR eoghanfulton65535@proton.me
+.UE
+.
+.
+.SH AUTHORS
+Eoghan Fulton
+.UR eoghanfulton65535@proton.me
+.UE

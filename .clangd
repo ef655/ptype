@@ -1,0 +1,2 @@
+CompileFlags:
+  Add: [-xc, -std=c11, -pedantic, -Wall, -Wextra, -Werror, -Wno-unused, -Wno-unused-parameter, -O0, -ggdb3, -I../build]
