@@ -356,7 +356,7 @@ static int confopt_quote_length(const char* value) {
 }
 
 static int confopt_insert_frequency(const char* value) {
-	return confopt_confrange(value, &config.quote_length, 1, 100);
+	return confopt_range(value, &config.insert_freq, 0, 100);
 }
 
 static int confopt_digit_strings(const char* value) {
