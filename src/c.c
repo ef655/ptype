@@ -139,8 +139,6 @@ bool colors_started          = false;
 int default_color            = 0;
 const char* progname         = NULL;
 Screen* screens              = NULL;
-WINDOW* win_bkgd             = NULL;
-PANEL* pan_bkgd              = NULL;
 char* user_config_dir        = NULL;
 char* user_state_dir         = NULL;
 char* user_hist_dir          = NULL;
@@ -558,9 +556,7 @@ int errlog(const char* fmt, ...) {
 }
 
 void fix_bkgd(void) {
-	wresize(win_bkgd, LINES, COLS);
-	replace_panel(pan_bkgd, win_bkgd);
-	bottom_panel(pan_bkgd);
+	clear();
 }
 
 /* free a previously initialized TypeText structure and its members */
@@ -1213,10 +1209,7 @@ int init_screens(void) {
 	keypad(hsd->win_hist, true);
 	leaveok(hsd->win_hist, true);
 
-	win_bkgd = newwin(0,0,0,0);
-	wbkgd(win_bkgd, COLOR_PAIR(CP_SCREEN));
-	pan_bkgd = new_panel(win_bkgd);
-	bottom_panel(pan_bkgd);
+	bkgd(COLOR_PAIR(CP_SCREEN));
 
 	return 0;
 }
