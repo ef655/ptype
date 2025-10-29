@@ -14,10 +14,17 @@ author: Mark Twain
 	If you tell the truth, you don't have to remember anything.
 }
 
-author: Alan Perlis
+author: Alan J. Perlis
 {
 	Fools ignore complexity. Pragmatists suffer it. 
 	Some can avoid it. Geniuses remove it. 
+}
+
+author: Alan J. Perlis
+{
+	Is it possible that software is not like anything else, that it
+	is meant to be discarded: that the whole point is to always
+	see it as a soap bubble?
 }
 
 author: Dennis Ritchie
