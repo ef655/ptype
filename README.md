@@ -5,7 +5,7 @@
 ptype is a typing practice program that runs in the terminal and aims to help
 the user accelerate their typing speed (or simply a game to exert energy on).
 
-For a comprehensive document on the features and how to configure ptype, see `ptype(6)` after installation.
+For a comprehensive document on the controls, features & how to configure ptype, see `ptype(6)` after installation.
 
 ---
 
