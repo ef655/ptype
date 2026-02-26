@@ -14,12 +14,12 @@
 .
 .SH DESCRIPTION
 .SS Overview
-@PACKAGE_NAME@ is a minimal typing practice program that runs in the terminal.
+@PACKAGE_NAME@ is a minimal typing practice program that runs in the terminal;
 @PACKAGE_NAME@ aims to be greatly informative in statistical feedback and highly configurable,
 providing customization of the UI, the generation of text,
-and the rules of the typing test.
-@PACKAGE_NAME@ is versatile, running adequately even on old terminals that don't support colors,
-although this may necessitate tweaking the non-color attributes in the configuration (see \[sc]Configuration file).
+and the rules of the typing test;
+@PACKAGE_NAME@ is versatile, running adequately even on old terminals that don't support colors \[em]
+although, this may necessitate tweaking the non-color attributes in the configuration (see \[sc]Configuration file).
 .P
 There are three main modes:
 .I Normal, Timed
