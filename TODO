@@ -1,3 +1,6 @@
+26-Feb-2026
+Update ptype to support UTF-8 virtually universally.
+
 27-Oct-2025
 Allow executable dictionaries/quotes-files to be treated different from ordinary
 ones. A specification must be defined for how these scripts treat input (for
