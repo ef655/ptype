@@ -86,11 +86,189 @@ source: A Tale of Two Cities (1959)
 	direct the other way
 }
 
-author: J.R.R Tolkien
-source: The Lord of The Rings: The Fellowship of The Ring (1954)
+author: J.R.R. Tolkien
+source: The Lord of the Rings: The Fellowship of the Ring (1954)
 {
 	"What's wrong with old Maggot?" asked Pippin. "He's a good friend to all
 	the Brandybucks. Of course he's a terror to trespassers, and keeps
 	ferocious dogs -- but after all, folk down here are near the border and
 	have to be more on their guard."
+}
+
+author: J.R.R. Tolkien
+source: The Lord of the Rings: The Fellowship of the Ring (1954)
+{
+	Three Rings for the Elven-kings under the sky,
+	Seven for the Dwarf-lords in their halls of stone,
+	Nine for Mortal Men doomed to die,
+	One for the Dark Lord on his dark throne.
+	In the Land of Mordor where the Shadows lie.
+	One Ring to rule them all, One Ring to find them,
+	One Ring to bring them all and in the darkness bind them.
+	In the Land of Mordor where the Shadows lie.
+}
+
+author: J.R.R. Tolkien
+source: The Lord of the Rings: The Fellowship of the Ring (1954)
+{
+	All that is gold does not glitter, Not all those who wander are lost; The old
+	that is strong does not wither, Deep roots are not reached by the frost.
+	From the ashes a fire shall be woken, A light from the shadows shall spring;
+	Renewed shall be blade that was broken, The crownless again shall be king.
+}
+
+author: C.S. Lewis
+{
+	If we find ourselves with a desire that nothing in this world can satisfy,
+	the most probable explanation is that we were made for another world.
+}
+
+author: Erich Maria Remarque
+source: All Quiet on the Western Front (1929)
+{
+	We've been travelling for a number of days. Then the first aircraft appeared
+	in the sky. We roll along past transport covoys. Guns, guns. We change to the
+	field railway. I try to find my regiment. Nobody knows exactly where it is at
+	the moment. I stay overnight somewhere, draw my rations somewhere in the morning,
+	and get a few vague instructions. And so I set off on my way again with my rifle
+	and pack.
+}
+
+author: Fyodor Dostoevsky
+source: White Nights (1848)
+{
+	For, after all, you do grow up, you do outgrow your ideals, which turn to
+	dust and ashes, which are shattered into fragments; and if you have no
+	other life, you just have to build one up out of these fragments. And all
+	the time your soul is craving and longing for something else. And in vain
+	does the dreamer rummage about in his old dreams, raking them over as
+	though they were a heap of cinders, looking in these cinders for some
+	spark, however tiny, to fan it into a flame so as to warm his chilled blood
+	by it and revive in it all that he held so dear before, all that touched
+	his heart, that made his blood course through his veins, that drew tears
+	from his eyes, and that so splendidly deceived him!
+}
+
+author: Leonardo da Vinci
+{
+	How many emperors and how many princes have lived and died and no record of
+	them remains, and they only sought to gain dominions and riches in order that
+	their fame might be ever-lasting.
+}
+
+author: Robert Bringhurst
+source: The Elements of Typographic Style (1992)
+{
+	Typography thrives as a shared concern - and there are no paths at all
+	where there are no shared desires and directions. A typographer determined
+	to forge new routes must move, like other solitary travellers, through
+	uninhabited country and against the grain of the land, crossing common
+	thoroughfares in the silence before dawn.
+}
+
+author: Robert Bringhurst
+source: The Elements of Typographic Style (1992)
+{
+	Like oratory, music, dance, calligraphy - like anything that lends its grace
+	to language - typography is an art that can be deliberately misused. It is a
+	craft by which the meanings of a text (or its absence of meaning) can be
+	clarified, honored, and shared, or knowingly disguised.
+}
+
+author: Cesare Pavese
+source: Dialoghi con Leuco (1947)
+{
+	A true revelation, it seems to me, will only emerge from stubborn
+	concentration on a solitary problem. I am not in a league with inventors or
+	adventurers, nor with travellers to exotic destinations. The surest - also
+	the quickest - way to awake the sense of wonder in ourselves is to look
+	intently, undeterred, at a single object. Suddenly, miraculously, it will
+	reveal itself as something we have never seen before.
+}
+
+author: Kahlil Gibran
+{
+	Trees are poems the earth writes upon the sky, We fell them down and turn
+	them into paper, That we may record our emptiness.
+}
+
+author: Johann Wolfgang von Goethe
+source: Wilhelm Meister's Apprenticeship (1795)
+{
+	One ought, every day at least, to hear a little song, read a good poem, see a
+	fine picture, and, if it were possible, to speak a few reasonable words.
+}
+
+author: A.A. Milne
+source: If I May (~1923)
+{
+	Quotation is a handy thing to have about, saving one the trouble of
+	thinking for oneself, always a laborious business.
+}
+
+author: Mark Twain
+{
+	The fear of death follows from the fear of life.
+	A man who lives fully is prepared to die at any time.
+}
+
+author: Dr. Seuss
+{
+	I like nonsense, it wakes up the brain cells.
+	Fantasy is a necessary ingredient in living.
+}
+
+author: W.B. Yeats
+{
+	Come away, O human child!
+	To the waters and the wild.
+	With a faery, hand in hand,
+	For the world's more full of weeping than you can understand.
+}
+
+author: Alexandre Dumas
+source: The Count of Monte Cristo (1846)
+{
+	When you compare the sorrows of real life to the pleasures of the imaginary
+	one, you will never want to live again, only to dream forever.
+}
+
+author: Alexandre Dumas
+source: The Count of Monte Cristo (1846)
+{
+	Learning does not make one learned: there are those who have knowledge and
+	those who have understanding. The first requires memory and the second
+	philosophy.
+}
+
+author: George Orwell
+{
+	The most effective way to destroy people is to deny and obliterate their own
+	understanding of their history.
+}
+
+author: George Orwell
+source: Nineteen Eighty-Four (1949)
+{
+	Being in a minority, even in a minority of one, did not make you mad. There was
+	truth and there was untruth, and if you clung to the truth even against the
+	whole world, you were not mad.
+}
+
+author: George Orwell
+source: Nineteen Eighty-Four (1949)
+{
+	For, after all, how do we know that two and two make four? Or that the
+	force of gravity works? Or that the past is unchangeable? If both the past
+	and the external world exist only in the mind, and if the mind itself is
+	controllable - what then?
+}
+
+author: George Orwell
+source: Politics and the English Language (1946)
+{
+	A scrupulous writer, in every sentence that he writes, will ask himself at
+	least four questions, thus: 1. What am I trying to say? 2. What words will
+	express it? 3. What image or idiom will make it clearer? 4. Is this image fresh
+	enough to have an effect?
 }
